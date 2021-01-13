@@ -36,12 +36,14 @@ func messageCreate(session *discordgo.Session, msg *discordgo.MessageCreate) {
 	var args = strings.Split(msg.Content, " ")
 	var command string
 	if len(args) < 1 {
-		if !strings.HasPrefix(msg.Content, prefix) {
-			return
-		}
-		command = strings.Replace(args[0], prefix, "", 1)
-		args = args[1:]
+		return
 	}
+	if !strings.HasPrefix(msg.Content, prefix) {
+		return
+	}
+	command = strings.Replace(args[0], prefix, "", 1)
+	args = args[1:]
+
 	command = strings.ToLower(command)
 	if command == "dltiktok" {
 		fmt.Println("User", msg.Author.Username+"#"+msg.Author.Discriminator, "used dltiktok command!")
