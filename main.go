@@ -89,7 +89,7 @@ func main() {
 	token, prefix = loadconfig()
 	embed = &discordgo.MessageEmbed{
 		Title:       "Tiktok video downloader!",
-		Description: "Please use the command `" + prefix + "dltiktok` in my dms to download a tiktok of your choice! Make sure the tiktok is using the link that looks like this: `https://vm.tiktok.com/ZMJvnDFWr/`\nExample: `" + prefix + "dltiktok https://vm.tiktok.com/ZMJvnDFWr/`\n\nInvite: [Click me!](https://discord.com/api/oauth2/authorize?client_id=798439375712813126&permissions=116736&scope=bot)\nSupport Server: [Click me!](https://discord.gg/vBxmKKE)",
+		Description: "Please use the command `" + prefix + "dltiktok` in my dms to download a tiktok of your choice! Make sure the tiktok is using the link that looks like this: `https://vm.tiktok.com/ZMJvnDFWr/`\nExample: `" + prefix + "dltiktok https://vm.tiktok.com/ZMJvnDFWr/`\n\nInvite: [Click me!](https://discord.com/api/oauth2/authorize?client_id=798439375712813126&permissions=116736&scope=bot)\nSupport Server: [Click me!](https://discord.gg/vBxmKKE)\nGithub link: [Click me!](https://github.com/postrequest69/TikTok-Downloader-DiscordBot)",
 	}
 	bot, err := discordgo.New("Bot " + token)
 	if err != nil {
