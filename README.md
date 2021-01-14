@@ -10,6 +10,8 @@ Make sure you have [go](https://golang.org/doc/install) installed!
 ```
 $ git clone https://github.com/postrequest69/TikTok-Downloader-DiscordBot.git
 $ cd TikTok-Downloader-DiscordBot
+$ go get github.com/bwmarrin/discordgo
+$ go get github.com/PuerkitoBio/goquery
 $ go build 
 $ run the exe...
 ```
