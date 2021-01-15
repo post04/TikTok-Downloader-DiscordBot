@@ -17,5 +17,4 @@ $ run the exe...
 ```
 
 # TODO
-Accept any tiktok link.
 Make it not dm only but with a toggleable guild config for dm only.
