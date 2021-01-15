@@ -47,7 +47,7 @@ func messageCreate(session *discordgo.Session, msg *discordgo.MessageCreate) {
 	command = strings.ToLower(command)
 	if command == "dltiktok" {
 		fmt.Println("User", msg.Author.Username+"#"+msg.Author.Discriminator, "used dltiktok command!")
-		if !strings.HasPrefix(args[0], "https://vm.tiktok.com/") {
+		if !strings.HasPrefix(args[0], "https://") || strings.Split(args[0], ".")[1] != "tiktok" {
 			session.ChannelMessageSend(msg.ChannelID, "Please provide valid input, Like this: \nhttps://vm.tiktok.com/ZMJvnDFWr/")
 			return
 		}
@@ -91,7 +91,7 @@ func main() {
 	token, prefix = loadconfig()
 	embed = &discordgo.MessageEmbed{
 		Title:       "Tiktok video downloader!",
-		Description: "Please use the command `" + prefix + "dltiktok` in my dms to download a tiktok of your choice! Make sure the tiktok is using the link that looks like this: `https://vm.tiktok.com/ZMJvnDFWr/`\nExample: `" + prefix + "dltiktok https://vm.tiktok.com/ZMJvnDFWr/`\n\nInvite: [Click me!](https://discord.com/api/oauth2/authorize?client_id=798439375712813126&permissions=116736&scope=bot)\nSupport Server: [Click me!](https://discord.gg/vBxmKKE)\nGithub link: [Click me!](https://github.com/postrequest69/TikTok-Downloader-DiscordBot)",
+		Description: "Please use the command `" + prefix + "dltiktok` in my dms to download a tiktok of your choice! Make sure the tiktok is using the link that looks like this: `https://vm.tiktok.com/ZMJvnDFWr/` \nor \n`https://www.tiktok.com/@msbutterworththicknrich/video/6917677526236089606`\nExample: `" + prefix + "dltiktok https://vm.tiktok.com/ZMJvnDFWr/`\n\nInvite: [Click me!](https://discord.com/api/oauth2/authorize?client_id=798439375712813126&permissions=116736&scope=bot)\nSupport Server: [Click me!](https://discord.gg/vBxmKKE)\nGithub link: [Click me!](https://github.com/postrequest69/TikTok-Downloader-DiscordBot)",
 	}
 	bot, err := discordgo.New("Bot " + token)
 	if err != nil {
