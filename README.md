@@ -12,7 +12,7 @@ $ git clone https://github.com/postrequest69/TikTok-Downloader-DiscordBot.git
 $ cd TikTok-Downloader-DiscordBot
 $ go get github.com/bwmarrin/discordgo
 $ go get github.com/PuerkitoBio/goquery
-$ go build 
+$ go build or go run .
 $ run the exe...
 ```
 
