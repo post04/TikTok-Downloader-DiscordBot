@@ -46,7 +46,15 @@ func messageCreate(session *discordgo.Session, msg *discordgo.MessageCreate) {
 
 	command = strings.ToLower(command)
 	if command == "dltiktok" {
+		if len(args) < 1 {
+			session.ChannelMessageSend(msg.ChannelID, "Please provide valid input, Like this: \nhttps://vm.tiktok.com/ZMJvnDFWr/")
+			return
+		}
 		fmt.Println("User", msg.Author.Username+"#"+msg.Author.Discriminator, "used dltiktok command!")
+		if !strings.Contains(args[0], ".") {
+			session.ChannelMessageSend(msg.ChannelID, "Please provide valid input, Like this: \nhttps://vm.tiktok.com/ZMJvnDFWr/")
+			return
+		}
 		if !strings.HasPrefix(args[0], "https://") || strings.Split(args[0], ".")[1] != "tiktok" {
 			session.ChannelMessageSend(msg.ChannelID, "Please provide valid input, Like this: \nhttps://vm.tiktok.com/ZMJvnDFWr/")
 			return
